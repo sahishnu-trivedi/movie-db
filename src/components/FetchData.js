@@ -19,5 +19,9 @@ export const fetchMovies = () => {
 }
 
 export const fetchFavouritesMovies = () => {
-    return fetch(`https://api.themoviedb.org/3/account/20932767/favorite/movies?language=en-US&page=1&sort_by=created_at.asc`, favouritesOptions);
+    return fetch(`https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1`, favouritesOptions);
+}
+
+export const fetchSearchedMovies = () => {
+    return fetch(`https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1`, favouritesOptions);
 }
