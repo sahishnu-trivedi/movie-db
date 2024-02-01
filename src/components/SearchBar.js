@@ -30,7 +30,7 @@ function SearchBar(){
     // }, []);
 
     return(
-        <div className="overflow-hidden rounded-lg bg-white shadow-md" data-headlessui-state="open">
+        <div className="overflow-hidden rounded-lg bg-white shadow-md relative" data-headlessui-state="open">
             <div className="relative">
                 <input className="block w-full appearance-none bg-transparent py-3 pl-3 pr-12 text-base text-slate-900 placeholder:text-slate-600 focus:outline-none sm:text-sm sm:leading-6 border border-gray-600" 
                     placeholder="Find anything..." 
