@@ -1,8 +1,8 @@
 import React from "react";
 
-function Buttons({ name, bkgColor='#fff', color='#111828' }) {
+function Buttons({ name, bkgColor='#fff', color='#111828', ...restProps }) {
     return (
-        <button className="p-2 mr-2 rounded" style={{background: bkgColor, color: color}}>{name}</button>
+        <button className="p-2 mr-2 rounded" style={{background: bkgColor, color: color}} {...restProps}>{name}</button>
     );
 }
 

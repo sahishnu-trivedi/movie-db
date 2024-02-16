@@ -1,23 +1,25 @@
-import { useState, useEffect } from "react";
-import { fetchFavouritesMovies } from "../../components/FetchData";
+import { useState, useEffect, useContext } from "react";
+import { GlobalContext } from "../../components/context/GlobalContextProvider";
+// import { fetchFavouritesMovies } from "../../helpers/fetchData";
 // import Banner from "../Banner/Banner";
 
 export default function Favourites () {
-    // const [favMovies, setFavMovies] = useState([]);
+    const {favourites} = useContext(GlobalContext);
 
-    const resultFavMovie = async () => {
-        return await fetchFavouritesMovies().then(res => res.json())
-        .then(success => console.log(success))
-        .catch(err => console.log(err))
-    }
+    // const resultFavMovie = async () => {
+    //     return await fetchFavouritesMovies().then(res => res.json())
+    //     .then(success => console.log(success))
+    //     .catch(err => console.log(err))
+    // }
 
-    useEffect(() => {
-        resultFavMovie();
-    });
+    // useEffect(() => {
+    //     // resultFavMovie();
+    // });
 
     return(
         <div>
-            Favourite Movies
+            {/* {favourites.find(movie => movie.id == )} */}
+            {favourites.map(movie => <div key={movie.id}>{movie.title}</div>)}
         </div>
     )
 }

@@ -1,24 +1,35 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
+import { fetchMovies } from '../../helpers/fetchData';
 import MovieSlider from '../../components/MovieSlider';
-import {fetchMovies} from '../../components/FetchData';
 import Banner from '../Banner/Banner';
+import { GlobalContext } from '../../components/context/GlobalContextProvider';
 
 export default function Home() {
-    const [movies, setMovies] = useState([]);
+    // const {movies, setMovies} = useContext(GlobalContext);
+    const {addAllMovies, allMovies} = useContext(GlobalContext);
+    
 
     const resultMovie = async () => {
-        return await fetchMovies().then(res => res.json())
-        .then(movie => setMovies(movie.results))
+        fetchMovies().then(res => res.json())
+        .then(data => {
+            const newResults = data.results.map(movie => ({...movie, addedToFavourites: false}))
+            addAllMovies(newResults)
+        })
         .catch(err => console.error(err));
     }
-
+    
     useEffect(() => {
-        resultMovie();
+        if(allMovies.length === 0) resultMovie();
     }, [])
+
     return(
         <div>
-            {movies && movies.length > 0 && <Banner content={movies} />}
-            {movies && movies.length > 0 && <MovieSlider slides={movies} />}
+            {allMovies.length > 0 && 
+            <>
+                <Banner content={allMovies[0]} />
+                <MovieSlider slides={allMovies} />
+            </>
+            }
       </div>
     )
 }

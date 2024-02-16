@@ -1,19 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import SearchMovieCard from "./SearchMovieCard";
-import { fetchSearchedMovies } from "./FetchData";
+import { fetchSearchedMovies } from "../helpers/fetchData";
 // import { fetchSearchedMovies } from "./FetchData";
 
 function SearchBar(){
     const [searchMovie, setSearchMovie] = useState('');
     const [searchMovieResult, setSearchMovieResult] = useState([]);
-
-    const options = {
-        method: 'GET',
-        headers: {
-            accept: 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZTFiMDZjZDQ2ZWFiYmYwZGFlMTA3ZDRmN2Q0NTE5ZSIsInN1YiI6IjY1YWE1NWMzOGQ1MmM5MDEzNzgxZGQyNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9nEuvsBbYJCezSz-NsVOhnmPGXxKswUuc2U6R12VioE'
-        }
-    };
 
     const handleChange = async (e) => {
         setSearchMovie(e.target.value)
@@ -23,15 +15,9 @@ function SearchBar(){
         .catch(err => console.log(err));
     }
 
-    console.log(searchMovieResult);
-
-    // useEffect(() => {
-    //     console.log(fetchMovieResult);
-    // }, []);
-
     return(
-        <div className="overflow-hidden rounded-lg bg-white shadow-md" data-headlessui-state="open">
-            <div className="relative">
+        <div className="relative rounded-lg bg-white shadow-md" data-headlessui-state="open">
+            <div>
                 <input className="block w-full appearance-none bg-transparent py-3 pl-3 pr-12 text-base text-slate-900 placeholder:text-slate-600 focus:outline-none sm:text-sm sm:leading-6 border border-gray-600" 
                     placeholder="Find anything..." 
                     value={searchMovie}
