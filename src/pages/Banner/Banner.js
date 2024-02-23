@@ -36,10 +36,6 @@ function Banner({ content }) {
                             </div>
                         </dl>
                     </div>
-                    <div className="mt-3">
-                        <Buttons name='Add to Favourites' />
-                        <Buttons name='Info' />
-                    </div>
                 </div>
             </div>
         </div>

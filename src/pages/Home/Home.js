@@ -23,7 +23,7 @@ export default function Home() {
     }, [])
 
     return(
-        <div>
+        <div className='pb-4'>
             {allMovies.length > 0 && 
             <>
                 <Banner content={allMovies[0]} />

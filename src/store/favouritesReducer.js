@@ -1,5 +1,6 @@
 const ADD_ALL_MOVIES = 'addAllMovies';
 const ADD_MOVIES_TO_FAVOURITES = 'addMoviesToFavourites';
+const REMOVE_MOVIES_FROM_FAVOURITES = 'removeMovieFromFavourites'
 
 const favouritesreducer = (state, action) => {
     switch(action.type){
@@ -13,6 +14,12 @@ const favouritesreducer = (state, action) => {
             return{
                 ...state,
                 favourites: [action.payload, ...state.favourites]
+            };
+        case 'REMOVE_MOVIES_FROM_FAVOURITES': 
+            action.payload.addedToFavourites = false;
+            return{
+                ...state,
+                favourites: [...state.favourites.filter((movie) => movie.id !== action.payload)]
             };
         default:
             return state;

@@ -8,7 +8,7 @@ function Header() {
     return(
         <header>
             <div className="container mx-auto">
-                <div className="md:flex md:items-center md:justify-between">
+                <div className="md:flex md:items-center md:justify-between position: fixed z-10 w-full left-0">
                     <h1 className="logo-name">Movieflix</h1>
                     <Nav />
                     {/* <ul className="nav lg:flex lg:gap-x-3 ">

@@ -1,17 +1,21 @@
-import { createContext, useReducer, useState } from "react"
+import { createContext, useEffect, useReducer } from "react"
 import favouritesreducer from "../../store/favouritesReducer";
 
 
 // Initial State
 const initialState = {
   allMovies: [],
-  favourites: []
+  favourites: localStorage.getItem("favourites") ? JSON.parse(localStorage.getItem("favourites")) : [],
 }
 
 export const GlobalContext = createContext(initialState);
 
 export const GlobalContextProvider = (props) => {
     const [state, dispatch] = useReducer(favouritesreducer, initialState)
+
+    useEffect(() => {
+      localStorage.setItem("favourites", JSON.stringify(state.favourites))
+    }, [state]);
 
     const addAllMovies = (movies) => {
       dispatch({type: "ADD_ALL_MOVIES", payload: movies});
@@ -21,8 +25,12 @@ export const GlobalContextProvider = (props) => {
       dispatch({type: "ADD_MOVIES_TO_FAVOURITES", payload: movie});
     }
 
+    const removeMovieFromFavourites = (movie) => {
+      dispatch({type: "REMOVE_MOVIES_FROM_FAVOURITES", payload: movie});
+    }
+
     return (
-      <GlobalContext.Provider value={{ favourites: state.favourites, allMovies: state.allMovies,  addMovieToFavourites, addAllMovies}}>
+      <GlobalContext.Provider value={{ favourites: state.favourites, allMovies: state.allMovies,  addMovieToFavourites, addAllMovies, removeMovieFromFavourites}}>
           {props.children}
       </GlobalContext.Provider>
     )
