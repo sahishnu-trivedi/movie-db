@@ -2,9 +2,9 @@ import { NavLink, useParams } from "react-router-dom";
 
 export default function NavItem({path, label}) {
   return (
-    <li>
+    <li className="nav-item mb-4">
         <NavLink to={path} className={({ isActive }) => {
-            return `text-m font-semibold leading-6 ${isActive ? 'text-red-500' : 'text-zinc-400'} `
+            return `text-7xl font-extrabold uppercase ${isActive ? 'nav-item-active' : 'nav-item-inactive'} `
           }}>{label}
         </NavLink>
     </li>

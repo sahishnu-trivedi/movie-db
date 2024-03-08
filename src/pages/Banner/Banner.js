@@ -1,8 +1,8 @@
-import Buttons from "../../components/Buttons";
+// import Buttons from "../../components/Buttons";
 
 function Banner({ content }) {
     return(
-        <div className="relative overflow-hidden bg-gray-900 py-24 sm:py-32 banner-overlay">
+        <div className="relative overflow-hidden bg-gray-900 py-44 sm:py-44 banner-overlay">
             <div>
                 <img src={`https://image.tmdb.org/t/p/original/${content.poster_path}`} alt={`${content.title}`} className="absolute inset-0 z-0 h-full w-full object-cover object-top md:object-top"/>
                 <div className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl" aria-hidden="true">

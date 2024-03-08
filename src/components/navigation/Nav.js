@@ -5,11 +5,13 @@ import NavItem from "./NavItem";
 
 function Nav() {
     return(
-        <ul className="nav lg:flex lg:gap-x-3">
-            {NAV_LINKS.map(link => (
-                <NavItem key={link.id} label={link.label} path={link.path}/>
-            ))}
-        </ul>
+        <div>
+            <ul className="nav">
+                {NAV_LINKS.map(link => (
+                    <NavItem key={link.id} label={link.label} path={link.path}/>
+                ))}
+            </ul>
+        </div>
     )
 }
 

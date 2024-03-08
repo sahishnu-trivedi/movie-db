@@ -11,7 +11,7 @@ function MovieSlider({ slides }) {
             <h3 className='my-4 text-3xl font-bold dark:text-white'>Top 50</h3>
            <Swiper
                 spaceBetween={20}
-                slidesPerView={5}
+                slidesPerView={6}
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
             >

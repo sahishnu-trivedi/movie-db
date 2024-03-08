@@ -1,4 +1,4 @@
-import { createContext, useEffect, useReducer } from "react"
+import { createContext, useEffect, useReducer, useState } from "react"
 import favouritesreducer from "../../store/favouritesReducer";
 
 
@@ -11,7 +11,9 @@ const initialState = {
 export const GlobalContext = createContext(initialState);
 
 export const GlobalContextProvider = (props) => {
-    const [state, dispatch] = useReducer(favouritesreducer, initialState)
+    const [state, dispatch] = useReducer(favouritesreducer, initialState);
+    const [clicked, setClicked] = useState(false);
+    const [openMenu, setOpenMenu] = useState(false);
 
     useEffect(() => {
       localStorage.setItem("favourites", JSON.stringify(state.favourites))
@@ -30,7 +32,7 @@ export const GlobalContextProvider = (props) => {
     }
 
     return (
-      <GlobalContext.Provider value={{ favourites: state.favourites, allMovies: state.allMovies,  addMovieToFavourites, addAllMovies, removeMovieFromFavourites}}>
+      <GlobalContext.Provider value={{ favourites: state.favourites, allMovies: state.allMovies,  addMovieToFavourites, addAllMovies, removeMovieFromFavourites, clicked, setClicked, openMenu, setOpenMenu}}>
           {props.children}
       </GlobalContext.Provider>
     )

@@ -17,3 +17,7 @@ export const fetchFavouritesMovies = () => {
 export const fetchSearchedMovies = (searchValue) => {
     return fetch(`https://api.themoviedb.org/3/search/movie?query=${searchValue}&include_adult=false&language=en-US&page=1`, options);
 }
+
+export const fetchUpcomingMovies = () => {
+    return fetch(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1`, options);
+}
