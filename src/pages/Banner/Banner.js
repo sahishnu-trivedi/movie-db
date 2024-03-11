@@ -13,26 +13,26 @@ function Banner({ content }) {
                 </div>
                 <div className="mx-auto max-w-7xl px-6 lg:px-8 banner-text">
                     <div className="mx-auto max-w-2xl lg:mx-0">
-                        <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">{content.title}</h2>
-                        <p className="mt-6 text-lg leading-8 text-gray-300">{content.overview}</p>
+                        <h2 className="text-4xl font-bold tracking-tight sm:text-6xl text-gold">{content.title}</h2>
+                        <p className="mt-6 text-lg leading-8 text-gray">{content.overview}</p>
                     </div>
                     <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
                         <dl className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
                             <div className="flex flex-col-reverse">
-                                <dt className="text-base leading-7 text-gray-300">Year Released</dt>
-                                <dd className="text-2xl font-bold leading-9 tracking-tight text-white">{content.release_date}</dd>
+                                <dt className="text-base leading-7 text-gray">Year Released</dt>
+                                <dd className="text-2xl font-bold leading-9 tracking-tight text-gold">{content.release_date}</dd>
                             </div>
                             <div className="flex flex-col-reverse">
-                                <dt className="text-base leading-7 text-gray-300">Popularity</dt>
-                                <dd className="text-2xl font-bold leading-9 tracking-tight text-white">{content.popularity}</dd>
+                                <dt className="text-base leading-7 text-gray">Popularity</dt>
+                                <dd className="text-2xl font-bold leading-9 tracking-tight text-gold">{content.popularity}</dd>
                             </div>
                             <div className="flex flex-col-reverse">
-                                <dt className="text-base leading-7 text-gray-300">Movie Genre</dt>
-                                <dd className="text-2xl font-bold leading-9 tracking-tight text-white">{content.genre_ids}</dd>
+                                <dt className="text-base leading-7 text-gray">Movie Genre</dt>
+                                <dd className="text-2xl font-bold leading-9 tracking-tight text-gold">{content.genre_ids}</dd>
                             </div>
                             <div className="flex flex-col-reverse">
-                                <dt className="text-base leading-7 text-gray-300">Movie Category</dt>
-                                <dd className="text-2xl font-bold leading-9 tracking-tight text-white">{content.genre_ids[1]}</dd>
+                                <dt className="text-base leading-7 text-gray">Movie Category</dt>
+                                <dd className="text-2xl font-bold leading-9 tracking-tight text-gold">{content.genre_ids[1]}</dd>
                             </div>
                         </dl>
                     </div>

@@ -23,5 +23,12 @@
 #hamburger-6.isActive .line:nth-child(1){-webkit-transform: translateY(11px); -ms-transform: translateY(11px); -o-transform: translateY(11px); transform: translateY(11px);}
 #hamburger-6.isActive .line:nth-child(3){-webkit-transform: translateY(-11px) rotate(90deg); -ms-transform: translateY(-11px) rotate(90deg); -o-transform: translateY(-11px) rotate(90deg); transform: translateY(-11px) rotate(90deg);}
 .movie-search-card{width: 95%; padding: 12px 20px; left: 24px; height: 380px; overflow-y: auto;}
-.rating-block ion-icon{color: #f5c518; font-size: 14px;}
+.star-icon ion-icon{color: #f5c518; font-size: 14px; margin-right: 5px;}
 .red-btn{border: 1px solid #CC0000; color: #CC0000;}
+.text-ellipses-multiline{display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;}
+.top-rated-movie-list{border-bottom: 1px solid #ccc;}
+.top-rated-movie-list:last-child{border-bottom: none;}
+.top-rated-movie-block{border-right: 1px solid #ccc; padding-right: 20px;}
+.top-rated-index{position: relative; padding-right: 10px;}
+.top-rated-index:after{content: ''; position: absolute; top: 50%; right: 0; transform: translateY(-50%); width: 1px; height: 100%; background: #f5c518;}
+.search-icon ion-icon{color: #fff; font-size: 36px;}

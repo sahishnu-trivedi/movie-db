@@ -9,7 +9,7 @@ function Header() {
         <header className="position: fixed z-20 w-full left-0 top-0 py-5">
             <div className="container mx-auto">
                 <div className="md:flex md:items-center md:justify-between">
-                    <h1 className="logo-name text-4xl">Movie<span className="red-text">flix</span></h1>
+                    <h1 className="logo-name text-4xl text-gold">Movie<span className="red-text">flix</span></h1>
                     <div className="md:flex md:items-center">
                         <SearchBar />
                         <Hamburger />

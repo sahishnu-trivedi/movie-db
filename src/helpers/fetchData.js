@@ -19,5 +19,13 @@ export const fetchSearchedMovies = (searchValue) => {
 }
 
 export const fetchUpcomingMovies = () => {
-    return fetch(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1`, options);
+    return fetch(`${process.env.REACT_APP_BASE_URL}/upcoming?language=en-US&page=1`, options);
+}
+
+export const fetchTopRatedMovies = () => {
+    return fetch(`${process.env.REACT_APP_BASE_URL}/top_rated?language=en-US&page=1`, options);
+}
+
+export const fetchTopRatedSeries = () => {
+    return fetch(`https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1`, options);
 }

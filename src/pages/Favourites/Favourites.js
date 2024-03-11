@@ -5,7 +5,7 @@ import { GlobalContext } from "../../components/context/GlobalContextProvider";
 
 export default function Favourites () {
     const {favourites} = useContext(GlobalContext);
-    console.log(favourites)
+    // console.log(favourites)
 
     return(
         <div className="container mx-auto columns-6 mt-4">
