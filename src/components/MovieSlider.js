@@ -8,7 +8,7 @@ function MovieSlider({ slides }) {
 
     return (
         <div className='container mx-auto mt-12'>
-            <h3 className='mb-4 text-3xl font-bold text-gold'>Top 50</h3>
+            <h3 className='mb-4 text-3xl font-bold text-primary-color'>Top 50</h3>
            <Swiper
                 spaceBetween={20}
                 slidesPerView={5}

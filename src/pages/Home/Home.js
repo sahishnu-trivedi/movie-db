@@ -3,7 +3,6 @@ import { fetchMovies } from '../../helpers/fetchData';
 import MovieSlider from '../../components/MovieSlider';
 import Banner from '../Banner/Banner';
 import { GlobalContext } from '../../components/context/GlobalContextProvider';
-import Menu from '../../components/menu/Menu';
 import TopRated from '../../components/top-rated/TopRated';
 
 export default function Home() {
@@ -31,7 +30,6 @@ export default function Home() {
                 <Banner content={allMovies[0]} />
                 <MovieSlider slides={allMovies} />
                 <TopRated />
-                <Menu />
             </>
             }
         </div>

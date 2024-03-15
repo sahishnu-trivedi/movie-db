@@ -19,7 +19,7 @@ const favouritesreducer = (state, action) => {
             action.payload.addedToFavourites = false;
             return{
                 ...state,
-                favourites: [...state.favourites.filter((movie) => movie.id !== action.payload)]
+                favourites: [...state.favourites.filter((movie) => movie.id !== action.payload.id)]
             };
         default:
             return state;

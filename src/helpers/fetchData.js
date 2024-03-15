@@ -29,3 +29,7 @@ export const fetchTopRatedMovies = () => {
 export const fetchTopRatedSeries = () => {
     return fetch(`https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1`, options);
 }
+
+export const fetchMovieDetail = (movieId) => {
+    return fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US`, options);
+}
