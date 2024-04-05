@@ -1,10 +1,17 @@
 // Import Swiper React components
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
+// import required modules
+import { Navigation } from 'swiper/modules';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+
 import MovieSliderCard from './MovieSliderCard/MovieSliderCard';
 
 function MovieSlider({ slides }) {
     // {`/moviedetail/${slide.title.replaceAll(' ', '-').toLowerCase()}` + '_' + 'id:' + `search: ${slide.id}`}
+    console.log(slides)
 
     return (
         <div className='container mx-auto mt-12'>
@@ -14,6 +21,8 @@ function MovieSlider({ slides }) {
                 slidesPerView={5}
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
+                navigation={true} 
+                modules={[Navigation]}
             >
                 {slides.map(slide => (
                     <SwiperSlide key={slide.id}>

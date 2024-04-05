@@ -33,3 +33,7 @@ export const fetchTopRatedSeries = () => {
 export const fetchMovieDetail = (movieId) => {
     return fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US`, options);
 }
+
+export const fetchTrendingList = () => {
+    return fetch(`https://api.themoviedb.org/3/trending/all/day?language=en-US`, options);
+}
