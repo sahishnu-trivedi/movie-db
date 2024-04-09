@@ -35,5 +35,9 @@ export const fetchMovieDetail = (movieId) => {
 }
 
 export const fetchTrendingList = () => {
-    return fetch(`https://api.themoviedb.org/3/trending/all/day?language=en-US`, options);
+    return fetch(`https://api.themoviedb.org/3/trending/movie/day?language=en-US`, options);
+}
+
+export const fetchTrendingSeriesList = () => {
+    return fetch(`https://api.themoviedb.org/3/trending/tv/day?language=en-US`, options);
 }

@@ -7,7 +7,14 @@ function MovieSliderCard({ sliderCard }) {
     const cardRef = useRef(null);
     // console.log('slideCards : ', sliderCard);
     const {addMovieToFavourites, removeMovieFromFavourites, favourites} = useContext(GlobalContext);
-    const createMovieSlug = (movie) => movie.title.replaceAll(' ', '-').toLowerCase()
+    const createMovieSlug = (movie) => {
+      if(movie && movie.title && movie.title.includes(' ')){
+        movie.title.replaceAll(' ', '-').toLowerCase()
+      }
+      else{
+        return movie.title
+      }
+    }
 
     const addedMovieId = favourites.filter(movie => (movie.id == sliderCard.id))
 
