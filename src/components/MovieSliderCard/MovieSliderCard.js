@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 function MovieSliderCard({ sliderCard }) {
     const cardRef = useRef(null);
-    // console.log('slideCards : ', sliderCard);
     const {addMovieToFavourites, removeMovieFromFavourites, favourites} = useContext(GlobalContext);
     const createMovieSlug = (movie) => {
       if(movie && movie.title && movie.title.includes(' ')){
@@ -21,7 +20,6 @@ function MovieSliderCard({ sliderCard }) {
     const isMovieFavourite = addedMovieId.length > 0 ? addedMovieId[0].addedToFavourites : false;
 
     const ratingDigit = Math.round(sliderCard.vote_average);
-    // console.log('addedMovieId : ', isMovieFavourite);
 
     const onMouseMove = (e) => {
       e.stopPropagation();

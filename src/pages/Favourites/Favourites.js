@@ -1,8 +1,6 @@
 import { useContext } from "react";
 import { GlobalContext } from "../../components/context/GlobalContextProvider";
 import Buttons from "../../components/Buttons";
-// import { fetchFavouritesMovies } from "../../helpers/fetchData";
-// import Banner from "../Banner/Banner";
 
 export default function Favourites () {
     const {favourites, removeMovieFromFavourites} = useContext(GlobalContext);

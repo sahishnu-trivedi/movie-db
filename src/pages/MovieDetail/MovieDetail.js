@@ -1,13 +1,9 @@
-import { useContext, useEffect, useState } from "react"
-import { GlobalContext } from "../../components/context/GlobalContextProvider"
-import { useParams, useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react"
+import { useSearchParams } from "react-router-dom";
 import { fetchMovieDetail } from "../../helpers/fetchData";
-// import { useParams } from "react-routers-dom";
 
 export default function MovieDetail() {
-    // const {allMovies} = useContext(GlobalContext);
     const [fullMovie, setFullMovie] = useState([]);
-    // console.log('allMovies : ', allMovies)
 
     const movieDetail = async(id) => {
         return await fetchMovieDetail(id).then(res => res.json())
@@ -18,22 +14,11 @@ export default function MovieDetail() {
     const [query] = useSearchParams();
 
     const movieId = Number(query.get('id'))
-    // console.log('movieId ', movieId)
     
     useEffect(() => {
         movieDetail(movieId);
-        console.log(fullMovie)
     }, [])
 
-    // const filteredMovie = allMovies.find((movie) => {
-    //     // console.log('movie: ', movie);
-    //     // console.log('Comparing:', movie.id, '===', movieId);
-    //     // console.log('typeof movieId : ', typeof(movieId))
-    //     // console.log('typeof movie.id : ', typeof(movie.id.toString()))
-    //     return movie.id == movieId
-    // })
-    // console.log(filteredMovie.title)
-    
     return(
         <div className="flex justify-center">
             {

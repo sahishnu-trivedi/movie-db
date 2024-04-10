@@ -6,10 +6,8 @@ import { GlobalContext } from '../../components/context/GlobalContextProvider';
 import TopRated from '../../components/top-rated/TopRated';
 
 export default function Home() {
-    // const {movies, setMovies} = useContext(GlobalContext);
     const {addAllMovies, allMovies} = useContext(GlobalContext);
     
-
     const resultMovie = async () => {
         fetchMovies().then(res => res.json())
         .then(data => {

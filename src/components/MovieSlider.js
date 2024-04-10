@@ -10,9 +10,6 @@ import 'swiper/css/navigation';
 import MovieSliderCard from './MovieSliderCard/MovieSliderCard';
 
 function MovieSlider({ slides }) {
-    // {`/moviedetail/${slide.title.replaceAll(' ', '-').toLowerCase()}` + '_' + 'id:' + `search: ${slide.id}`}
-    console.log(slides)
-
     return (
         <div className='container mx-auto mt-12'>
             <h3 className='mb-4 text-3xl font-bold text-primary-color'>Top 50</h3>

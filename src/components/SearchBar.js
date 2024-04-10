@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import SearchMovieCard from "./SearchMovieCard";
 import { fetchSearchedMovies } from "../helpers/fetchData";
 
-// import { fetchSearchedMovies } from "./FetchData";
-
 function SearchBar(){
     const [searchMovie, setSearchMovie] = useState('');
     const [searchMovieResult, setSearchMovieResult] = useState([]);
